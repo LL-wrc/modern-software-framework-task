@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button onclick="appendCharacter('%')" class="btn-op-light">%</button>
+            <button onclick="clearEntry()" class="btn-op-light">CE</button> 
+            <button onclick="clearDisplay()" class="btn-op-light">C</button>
+            <button onclick="deleteLast()" class="btn-op-light">⌫</button>
+
+            <button onclick="calculateUnaryOperation('inv')" class="btn-op-light">1/x</button>
+            <button onclick="calculateUnaryOperation('sq')" class="btn-op-light">x²</button>
+            <button onclick="calculateUnaryOperation('sqrt')" class="btn-op-light">²√x</button> 
+            <button onclick="appendCharacter('/')" class="btn-op-light">÷</button>
+
+            <button onclick="appendCharacter('7')" class="btn-num">7</button>
+            <button onclick="appendCharacter('8')" class="btn-num">8</button>
+            <button onclick="appendCharacter('9')" class="btn-num">9</button>
+            <button onclick="appendCharacter('*')" class="btn-op-light">×</button>
+
+            <button onclick="appendCharacter('4')" class="btn-num">4</button>
+            <button onclick="appendCharacter('5')" class="btn-num">5</button>
+            <button onclick="appendCharacter('6')" class="btn-num">6</button>
+            <button onclick="appendCharacter('-')" class="btn-op-light">−</button>
+
+            <button onclick="appendCharacter('1')" class="btn-num">1</button>
+            <button onclick="appendCharacter('2')" class="btn-num">2</button>
+            <button onclick="appendCharacter('3')" class="btn-num">3</button>
+            <button onclick="appendCharacter('+')" class="btn-op-light">+</button>
+
+            <button onclick="toggleSign()" class="btn-op-light">+/−</button>
+            <button onclick="appendCharacter('0')" class="btn-num">0</button>
+            <button onclick="appendCharacter('.')" class="btn-num">.</button>
+            <button onclick="calculateResult()" class="btn-equal">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
