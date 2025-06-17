@@ -4,10 +4,8 @@
 
 一、源码目录结构
 
-go-calculator
 
 ├─ backend                  后端
-
 │    ├─ go.mod              
 │    ├─ go.sum              
 │    ├─ main.go             主程序入口
@@ -20,4 +18,4 @@ go-calculator
 │    ├─ index.html          
 │    ├─ script.js           
 │    └─ style.css          
-└─ run.bat                 
+└─ run.bat           
