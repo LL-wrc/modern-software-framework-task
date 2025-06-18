@@ -5,9 +5,14 @@ function appendCharacter(char) {
     if (display.innerText === '0' && char !== '.') {
         display.innerText = '';
     }
-    if (char === '%' && currentExpression === '') return; 
+    // 将 % 的行为修改为调用一元运算
+    if (char === '%') {
+        calculateUnaryOperation('percent');
+        return;
+    }
     const lastChar = currentExpression.slice(-1);
-    const operators = ['+', '-', '*', '/', '%'];   //todo 先示 % 为求余，后续会改为百分号，以符合计算器规则
+    // 修改：从运算符列表中移除 '%'，作为一元运算符
+    const operators = ['+', '-', '*', '/']; 
     if (operators.includes(lastChar) && operators.includes(char)) {
         if (char === '-' && (currentExpression.length === 0 || operators.includes(currentExpression.slice(-2, -1)))) {
             // 处理+/-的情况
@@ -87,6 +92,9 @@ async function calculateUnaryOperation(operation) {
             break;
         case 'inv':
             expressionToCalculate = `1/(${currentExpression})`;
+            break;
+        case 'percent':
+            expressionToCalculate = `(${currentExpression})/100`;
             break;
         default:
             display.innerText = 'Error';
