@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const body = document.body;
+    const themes = ['theme-day', 'theme-night', 'theme-image'];
+    let currentThemeIndex = 0;
+
+    // 日间背景，夜间背景，自定义背景
+    body.classList.add(themes[currentThemeIndex]);
+
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.remove(themes[currentThemeIndex]);
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        body.classList.add(themes[currentThemeIndex]);
+    });
+});
+
 const display = document.getElementById('display');
 let currentExpression = '';
 
