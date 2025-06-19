@@ -1,11 +1,64 @@
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #E3E3E3; 
+    height: 100vh;
+    transition: background 0.5s ease;
+}
+
+body.theme-day {
+    background-color: #f0f0f0;
+}
+
+body.theme-night {
+    background-color: #121212;
+}
+
+body.theme-image {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title-container {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+}
+
+.title-container h1 {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    transition: color 0.5s ease;
+}
+
+body.theme-day .title-container h1 {
+    color: #333;
+}
+
+body.theme-night .title-container h1,
+body.theme-image .title-container h1 {
+    color: white;
+}
+
+#theme-toggle-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle-btn:hover {
+    background-color: #45a049;
 }
 
 .calculator {
