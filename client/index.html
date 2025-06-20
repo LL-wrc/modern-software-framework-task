@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="title-container">
+        <h1>Calculator</h1>
+        <button id="theme-toggle-btn">Change Theme</button>
+    </div>
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
             <button onclick="appendCharacter('%')" class="btn-op-light">%</button>
-            <button onclick="clearEntry()" class="btn-op-light">CE</button> 
+            <button onclick="clearEntry()" class="btn-op-light">CE</button>
             <button onclick="clearDisplay()" class="btn-op-light">C</button>
             <button onclick="deleteLast()" class="btn-op-light">⌫</button>
 
             <button onclick="calculateUnaryOperation('inv')" class="btn-op-light">1/x</button>
             <button onclick="calculateUnaryOperation('sq')" class="btn-op-light">x²</button>
-            <button onclick="calculateUnaryOperation('sqrt')" class="btn-op-light">²√x</button> 
+            <button onclick="calculateUnaryOperation('sqrt')" class="btn-op-light">²√x</button>
             <button onclick="appendCharacter('/')" class="btn-op-light">÷</button>
 
             <button onclick="appendCharacter('7')" class="btn-num">7</button>
